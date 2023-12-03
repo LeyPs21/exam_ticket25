@@ -1,0 +1,32 @@
+#include <iostream>
+
+// Функція для обчислення ступеня числа
+unsigned long long power(int base, int exponent) {
+    unsigned long long result = 1;
+
+    for (int i = 0; i < exponent; ++i) {
+        result *= base;
+    }
+
+    return result;
+}
+
+int main() {
+    // Введення значень a та x
+    int a, x;
+    std::cout << "Введіть натуральне число a: ";
+    std::cin >> a;
+
+    std::cout << "Введіть натуральний показник x: ";
+    std::cin >> x;
+
+    // Обчислення a^x та x^a
+    unsigned long long result1 = power(a, x);
+    unsigned long long result2 = power(x, a);
+
+    // Виведення результатів
+    std::cout << a << "^" << x << " = " << result1 << std::endl;
+    std::cout << x << "^" << a << " = " << result2 << std::endl;
+
+    return 0;
+}
